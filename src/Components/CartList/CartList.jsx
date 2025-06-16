@@ -8,7 +8,8 @@ const CartList = () => {
 
    const allItems = useLoaderData();
    useEffect(()=>{
-    const storedCartList = getStoredCart()
+    const storedCartList = getStoredCart();
+    const 
     console.log(storedCartList,allItems)
    },[])
     return (
