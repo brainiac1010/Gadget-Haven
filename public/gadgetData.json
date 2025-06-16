@@ -1,0 +1,257 @@
+[
+  {
+    "product_id": 1,
+    "product_title": "Apple iPhone 15 Pro Max",
+    "product_image": "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-1.jpg",
+    "category": "Phones",
+    "price": 1299,
+    "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+    "specification": [
+      "6.7-inch Super Retina XDR display",
+      "A17 Bionic chip",
+      "Triple-camera system",
+      "LiDAR Scanner",
+      "Up to 2TB storage"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": 2,
+    "product_title": "Samsung Galaxy S23 Ultra",
+    "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/Galaxy-S23-Ultra-Cream-1280.jpg",
+    "category": "Phones",
+    "price": 1199,
+    "description": "Flagship Android phone with premium features.",
+    "specification": [
+      "6.8-inch AMOLED",
+      "Snapdragon 8 Gen 2",
+      "200MP camera",
+      "5000mAh battery",
+      "S Pen support"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 3,
+    "product_title": "Sony Xperia 1 V",
+    "product_image": "https://fdn2.gsmarena.com/vv/pics/sony/sony-xperia-1-v-1.jpg",
+    "category": "Phones",
+    "price": 1399,
+    "description": "Cinematic 4K phone with pro camera capabilities.",
+    "specification": [
+      "6.5-inch 4K OLED",
+      "Snapdragon 8 Gen 2",
+      "Triple 48MP camera",
+      "Dolby Atmos",
+      "IP68 rating"
+    ],
+    "availability": false,
+    "rating": 4.2
+  },
+  {
+    "product_id": 4,
+    "product_title": "Lenovo Legion 7i",
+    "product_image": "https://psrefstuff.lenovo.com/syspool/Sys/Image/Legion/Legion_7_16IRX9/Compressedimage/Legion_7_16IRX9_CT1_06.png",
+    "category": "Computers",
+    "price": 2299,
+    "description": "High-performance gaming laptop with top-tier specs.",
+    "specification": [
+      "16-inch WQXGA 240Hz",
+      "Intel i9-13900HX",
+      "32GB RAM",
+      "1TB SSD",
+      "RTX 4080"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 5,
+    "product_title": "MacBook Air M2",
+    "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-midnight-config-20220606?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1654122880566",
+    "category": "Computers",
+    "price": 1099,
+    "description": "Portable yet powerful with Apple Silicon M2 chip.",
+    "specification": [
+      "13.6-inch Retina display",
+      "M2 Chip",
+      "8GB RAM",
+      "256GB SSD",
+      "MagSafe charging"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 6,
+    "product_title": "Dell XPS 13",
+    "product_image": "https://m.media-amazon.com/images/I/710EGJBdIML._AC_SL1500_.jpg",
+    "category": "Computers",
+    "price": 999,
+    "description": "Ultra-thin, lightweight premium productivity laptop.",
+    "specification": [
+      "13.4-inch FHD+ display",
+      "Intel i7 12th Gen",
+      "16GB RAM",
+      "512GB SSD",
+      "Touch screen"
+    ],
+    "availability": false,
+    "rating": 4.4
+  },
+  {
+    "product_id": 7,
+    "product_title": "Apple Watch Series 9",
+    "product_image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-s9-202309?wid=400&hei=500&fmt=jpeg&qlt=90&.v=1693501310372",
+    "category": "Smart Watches",
+    "price": 399,
+    "description": "The most advanced Apple Watch yet.",
+    "specification": [
+      "Always-On Retina display",
+      "Temperature sensor",
+      "Crash detection",
+      "ECG and Blood Oxygen",
+      "Fast charging"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": 8,
+    "product_title": "Garmin Fenix 7X Pro",
+    "product_image": "https://ph.garmin.com/m/ph/g/products/fenix-7x-pro-sapphire-frogray-cf-lg.jpg",
+    "category": "Smart Watches",
+    "price": 899,
+    "description": "Rugged multisport GPS smartwatch.",
+    "specification": [
+      "Solar charging",
+      "Built-in flashlight",
+      "Advanced fitness metrics",
+      "Military standard",
+      "Multi-band GNSS"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 9,
+    "product_title": "Samsung Galaxy Watch 6",
+    "product_image": "https://images.samsung.com/bd/galaxy-watch6/feature/galaxy-watch6-connectivity-roaming-mo.jpg",
+    "category": "Smart Watches",
+    "price": 329,
+    "description": "Stay connected and healthy with Galaxy Watch.",
+    "specification": [
+      "1.5-inch AMOLED display",
+      "BioActive sensor",
+      "Sleep tracking",
+      "IP68 rating",
+      "Wireless charging"
+    ],
+    "availability": true,
+    "rating": 4.3
+  },
+  {
+    "product_id": 10,
+    "product_title": "Anker 737 Power Bank",
+    "product_image": "https://www.pchouse.com.bd/image/cache/catalog/Anker/anker-737-power-bank-powercore-24000mah-140w-3-600x500h.jpg.webp",
+    "category": "Power Banks",
+    "price": 159,
+    "description": "Massive power bank with display and fast charging.",
+    "specification": [
+      "24,000mAh capacity",
+      "140W output",
+      "Smart display",
+      "PD 3.1 support",
+      "3-port design"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": 11,
+    "product_title": "MI Power Bank 3",
+    "product_image": "https://www.penguin.com.bd/wp-content/uploads/2019/05/Xiaomi-Mi-10000mAh-Power-bank-3-18W-Two-way-Quick-Charge-Silver.jpg",
+    "category": "Power Banks",
+    "price": 65,
+    "description": "Affordable and reliable power solution.",
+    "specification": [
+      "20,000mAh capacity",
+      "18W fast charging",
+      "Dual USB output",
+      "Aluminum body",
+      "Type-C input"
+    ],
+    "availability": false,
+    "rating": 4.1
+  },
+  {
+    "product_id": 12,
+    "product_title": "Anker 313 Charger (Nano)",
+    "product_image": "https://img.drz.lazcdn.com/static/bd/p/3d92fcb9cec321da81f22a9f2e7cf4a0.jpg_720x720q80.jpg",
+    "category": "Chargers",
+    "price": 55,
+    "description": "Compact fast charger with wide compatibility.",
+    "specification": [
+      "20W USB-C Power Delivery",
+      "Foldable plug",
+      "Universal compatibility",
+      "Lightweight design",
+      "MultiProtect safety"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 13,
+    "product_title": "Apple 35W Dual USB-C Charger",
+    "product_image": "https://www.hojoborolo.com/wp-content/uploads/2022/10/AP2CPA35x-1.jpg",
+    "category": "Chargers",
+    "price": 65,
+    "description": "Fast and efficient dual port charging from Apple.",
+    "specification": [
+      "2x USB-C output",
+      "35W total power",
+      "Compact design",
+      "Works with MagSafe",
+      "Overheat protection"
+    ],
+    "availability": true,
+    "rating": 4.4
+  },
+  {
+    "product_id": 14,
+    "product_title": "OnePlus 12",
+    "product_image": "https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-12r-1.jpg",
+    "category": "Phones",
+    "price": 899,
+    "description": "Flagship killer with top-tier specs and premium design.",
+    "specification": [
+      "6.82-inch AMOLED QHD+",
+      "Snapdragon 8 Gen 2",
+      "50MP Sony IMX890 camera",
+      "100W fast charging",
+      "IP65 rating"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 15,
+    "product_title": "Asus ROG Zephyrus G14",
+    "product_image": "https://dlcdnwebimgs.asus.com/gain/601388C7-6C16-4B1F-90A4-3B051E81A363",
+    "category": "Computers",
+    "price": 1999,
+    "description": "Compact powerhouse for gamers and creators.",
+    "specification": [
+      "14-inch QHD+ 165Hz",
+      "AMD Ryzen 9 7940HS",
+      "NVIDIA RTX 4060",
+      "16GB RAM",
+      "1TB SSD"
+    ],
+    "availability": true,
+    "rating": 4.7
+  }
+]
