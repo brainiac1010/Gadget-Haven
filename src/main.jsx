@@ -13,7 +13,8 @@ import Statistics from './Components/Statistics/Statistics.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import GadgetsDetails from './Components/GadgetsDetails/GadgetsDetails.jsx';
 import CartList from './Components/CartList/CartList.jsx';
-
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       {
         path: 'cartList',
         element: <CartList></CartList>,
-        loader:()=>fetch('/gadgetData.json')
+        loader: () => fetch('/gadgetData.json')
       },
       {
         path: 'Dashboard',
@@ -52,5 +53,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer></ToastContainer>
   </StrictMode>
 );

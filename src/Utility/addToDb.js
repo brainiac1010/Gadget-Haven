@@ -1,47 +1,54 @@
-// addToDb.js
+// Utility/addToDb.js
 
-// Cart Functions
+import { toast } from "react-toastify";
+
+// --- CART ---
 const getStoredCart = () => {
     const storedListStr = localStorage.getItem('addTo-cart');
-    if (storedListStr) {
-        return JSON.parse(storedListStr);
-    } else {
-        return [];
-    }
+    return storedListStr ? JSON.parse(storedListStr) : [];
 };
 
 const addToStoredCart = (id) => {
     const storedList = getStoredCart();
-
-    if (storedList.includes(id)) {
-        console.log(id, "already exists in the cart");
-    } else {
+    if (!storedList.includes(id)) {
         storedList.push(id);
         localStorage.setItem('addTo-cart', JSON.stringify(storedList));
-        console.log(id, "added to the cart");
+     toast("Item add in your Cart")
     }
 };
 
-// Wishlist Functions
+const removeFromStoredCart = (id) => {
+    const storedList = getStoredCart();
+    const updatedList = storedList.filter(itemId => itemId !== id);
+    localStorage.setItem('addTo-cart', JSON.stringify(updatedList));
+};
+
+// --- WISHLIST ---
 const getStoredWishlist = () => {
     const storedListStr = localStorage.getItem('wishlist');
-    if (storedListStr) {
-        return JSON.parse(storedListStr);
-    } else {
-        return [];
-    }
+    return storedListStr ? JSON.parse(storedListStr) : [];
 };
 
 const addToStoredWishlist = (id) => {
     const storedList = getStoredWishlist();
-
-    if (storedList.includes(id)) {
-        console.log(id, "already exists in the wishlist");
-    } else {
+    if (!storedList.includes(id)) {
         storedList.push(id);
         localStorage.setItem('wishlist', JSON.stringify(storedList));
-        console.log(id, "added to the wishlist");
+        toast("Item add in your wishlist")
     }
 };
 
-export { addToStoredCart, addToStoredWishlist,getStoredCart };
+const removeFromStoredWishlist = (id) => {
+    const storedList = getStoredWishlist();
+    const updatedList = storedList.filter(itemId => itemId !== id);
+    localStorage.setItem('wishlist', JSON.stringify(updatedList));
+};
+
+export {
+    addToStoredCart,
+    getStoredCart,
+    removeFromStoredCart,
+    addToStoredWishlist,
+    getStoredWishlist,
+    removeFromStoredWishlist
+};
