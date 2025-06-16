@@ -10,6 +10,7 @@ const NavBar = () => {
         <li ><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='Statistics'>Statistics</NavLink></li>
         <li><NavLink to='Dashboard'>Dashboard</NavLink></li>
+       
 
     </>
     return (
@@ -36,14 +37,14 @@ const NavBar = () => {
             <div className="flex gap-4 navbar-end text-black">
 
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-                    <NavLink to=''> <BsCart3 className="text-xl" /> </NavLink>
+                    <NavLink to='/cartList'> <BsCart3 className="text-xl" /> </NavLink>
 
                 </div>
 
 
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
 
-                    <NavLink to=''> <BsHeart className="text-xl" /> </NavLink>
+                    <NavLink to='/cartList'> <BsHeart className="text-xl" /> </NavLink>
                 </div>
             </div>
 

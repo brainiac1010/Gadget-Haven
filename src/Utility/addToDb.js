@@ -44,4 +44,4 @@ const addToStoredWishlist = (id) => {
     }
 };
 
-export { addToStoredCart, addToStoredWishlist };
+export { addToStoredCart, addToStoredWishlist,getStoredCart };
