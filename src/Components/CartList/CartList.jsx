@@ -45,9 +45,9 @@ const CartList = () => {
         <div className="min-h-screen px-4 md:px-10 py-8 bg-slate-900 text-white">
             <h3 className="text-4xl font-bold mb-8 text-center text-sky-400">🛒 Cart & 💖 Wishlist</h3>
             <Tabs>
-                <TabList className="flex space-x-4 justify-center mb-6 text-lg font-semibold">
-                    <Tab className="cursor-pointer py-2 px-6 border border-sky-400 rounded-full hover:bg-sky-600 transition">Cart</Tab>
-                    <Tab className="cursor-pointer py-2 px-6 border border-pink-400 rounded-full hover:bg-pink-600 transition">Wishlist</Tab>
+                <TabList className="flex space-x-4 justify-center mb-6 text-lg font-semibold ">
+                    <Tab className="cursor-pointer py-2 px-6 border border-sky-400 rounded hover:bg-sky-600 transition">Cart</Tab>
+                    <Tab className="cursor-pointer py-2 px-6 border border-pink-400 rounded hover:bg-pink-600 transition">Wishlist</Tab>
                 </TabList>
 
                 {/* Cart Tab */}
@@ -57,6 +57,7 @@ const CartList = () => {
                         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                             {cartList.map(gadget => (
                                 <div key={gadget.product_id} className="relative">
+                                    <Gadget gadget={gadget} />
                                     <button
                                         onClick={() => handleRemoveCart(gadget.product_id)}
                                         className="absolute top-2 right-2 text-red-500 hover:text-red-700 bg-white rounded-full p-1"
@@ -64,7 +65,6 @@ const CartList = () => {
                                     >
                                         <AiOutlineClose size={20} />
                                     </button>
-                                    <Gadget gadget={gadget} />
                                 </div>
                             ))}
                         </div>
@@ -80,6 +80,7 @@ const CartList = () => {
                         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                             {wishlist.map(gadget => (
                                 <div key={gadget.product_id} className="relative">
+                                    <Gadget gadget={gadget} />
                                     <button
                                         onClick={() => handleRemoveWishlist(gadget.product_id)}
                                         className="absolute top-2 right-2 text-red-500 hover:text-red-700 bg-white rounded-full p-1"
@@ -87,7 +88,6 @@ const CartList = () => {
                                     >
                                         <AiOutlineClose size={20} />
                                     </button>
-                                    <Gadget gadget={gadget} />
                                 </div>
                             ))}
                         </div>
