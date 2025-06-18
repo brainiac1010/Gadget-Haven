@@ -6,7 +6,8 @@ import {
     getStoredCart,
     removeFromStoredCart,
     getStoredWishlist,
-    removeFromStoredWishlist
+    removeFromStoredWishlist,
+    clearCart
 } from '../../Utility/addToDb';
 import Gadget from '../Gadget/Gadget';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -14,6 +15,8 @@ import { AiOutlineClose } from 'react-icons/ai';
 const CartList = () => {
     const [cartList, setCartList] = useState([]);
     const [wishlist, setWishlist] = useState([]);
+    const [showPaymentSuccess, setShowPaymentSuccess] = useState(false);
+    const [sortOrder, setSortOrder] = useState('default');
     const allItems = useLoaderData();
 
     useEffect(() => {
@@ -41,6 +44,30 @@ const CartList = () => {
         setWishlist(prev => prev.filter(item => item.product_id !== id));
     };
 
+    const handlePurchase = () => {
+        setShowPaymentSuccess(true);
+    };
+
+    const handleClosePaymentSuccess = () => {
+        setShowPaymentSuccess(false);
+        clearCart();
+        setCartList([]);
+    };
+
+    const handleSortByPrice = () => {
+        const newSortOrder = sortOrder === 'desc' ? 'asc' : 'desc';
+        setSortOrder(newSortOrder);
+        
+        const sortedList = [...cartList].sort((a, b) => {
+            return newSortOrder === 'desc' ? b.price - a.price : a.price - b.price;
+        });
+        setCartList(sortedList);
+    };
+
+    const calculateTotal = () => {
+        return cartList.reduce((total, item) => total + parseFloat(item.price), 0).toFixed(2);
+    };
+
     return (
         <div className="min-h-screen px-4 md:px-10 py-8 bg-slate-900 text-white">
             <h3 className="text-4xl font-bold mb-8 text-center text-sky-400">🛒 Cart & 💖 Wishlist</h3>
@@ -52,21 +79,42 @@ const CartList = () => {
 
                 {/* Cart Tab */}
                 <TabPanel>
-                    <h2 className="text-2xl text-sky-300 mb-6">🛍 Total Items in Cart: <span className="font-bold">{cartList.length}</span></h2>
+                    <div className="mb-6">
+                        <h2 className="text-2xl mb-2">Cart</h2>
+                        <div className="flex justify-between items-center">
+                            <p className="text-lg font-bold">Total cost: {calculateTotal()}</p>
+                            <button 
+                                onClick={handleSortByPrice}
+                                className="bg-sky-600 hover:bg-sky-700 px-4 py-2 rounded"
+                            >
+                                Sort by Price {sortOrder === 'desc' ? '↓' : '↑'}
+                            </button>
+                        </div>
+                    </div>
+
                     {cartList.length > 0 ? (
-                        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="space-y-6">
                             {cartList.map(gadget => (
-                                <div key={gadget.product_id} className="relative">
-                                    <Gadget gadget={gadget} />
+                                <div key={gadget.product_id} className="relative border-b border-gray-700 pb-6">
+                                    <h3 className="text-xl font-semibold mb-2">{gadget.name}</h3>
+                                    <p className="text-gray-300 mb-2">{gadget.description}</p>
+                                    <p className="font-bold">Price: $ {gadget.price}</p>
                                     <button
                                         onClick={() => handleRemoveCart(gadget.product_id)}
-                                        className="absolute top-2 right-2 text-red-500 hover:text-red-700 bg-white rounded-full p-1"
+                                        className="absolute top-0 right-0 text-red-500 hover:text-red-700"
                                         title="Remove from Cart"
                                     >
                                         <AiOutlineClose size={20} />
                                     </button>
                                 </div>
                             ))}
+                            
+                            <button 
+                                onClick={handlePurchase}
+                                className="mt-6 bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg text-lg font-bold"
+                            >
+                                Purchase
+                            </button>
                         </div>
                     ) : (
                         <p className="text-center text-slate-400">No items in the cart.</p>
@@ -96,6 +144,23 @@ const CartList = () => {
                     )}
                 </TabPanel>
             </Tabs>
+
+            {/* Payment Success Modal */}
+            {showPaymentSuccess && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-slate-800 p-8 rounded-lg max-w-md w-full">
+                        <h3 className="text-2xl font-bold mb-4 text-green-400">Payment Successful</h3>
+                        <p className="mb-6">Thanks for purchasing.</p>
+                        <p className="text-lg font-bold mb-6">Total: {calculateTotal()}</p>
+                        <button
+                            onClick={handleClosePaymentSuccess}
+                            className="w-full bg-sky-600 hover:bg-sky-700 py-2 rounded"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

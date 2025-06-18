@@ -1,5 +1,4 @@
 // Utility/addToDb.js
-
 import { toast } from "react-toastify";
 
 // --- CART ---
@@ -13,7 +12,7 @@ const addToStoredCart = (id) => {
     if (!storedList.includes(id)) {
         storedList.push(id);
         localStorage.setItem('addTo-cart', JSON.stringify(storedList));
-     toast("Item add in your Cart")
+        toast("Item add in your Cart")
     }
 };
 
@@ -21,6 +20,10 @@ const removeFromStoredCart = (id) => {
     const storedList = getStoredCart();
     const updatedList = storedList.filter(itemId => itemId !== id);
     localStorage.setItem('addTo-cart', JSON.stringify(updatedList));
+};
+
+const clearCart = () => {
+    localStorage.removeItem('addTo-cart'); // Changed from 'shopping-cart' to 'addTo-cart' to match your other cart functions
 };
 
 // --- WISHLIST ---
@@ -48,6 +51,7 @@ export {
     addToStoredCart,
     getStoredCart,
     removeFromStoredCart,
+    clearCart,
     addToStoredWishlist,
     getStoredWishlist,
     removeFromStoredWishlist
