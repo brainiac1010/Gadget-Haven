@@ -9,7 +9,6 @@ import {
     removeFromStoredWishlist,
     clearCart
 } from '../../Utility/addToDb';
-import Gadget from '../Gadget/Gadget';
 import { AiOutlineClose } from 'react-icons/ai';
 
 const CartList = () => {
@@ -82,7 +81,7 @@ const CartList = () => {
                     <div className="mb-6">
                         <h2 className="text-2xl mb-2">Cart</h2>
                         <div className="flex justify-between items-center">
-                            <p className="text-lg font-bold">Total cost: {calculateTotal()}</p>
+                            <p className="text-lg font-bold">Total cost: ${calculateTotal()}</p>
                             <button 
                                 onClick={handleSortByPrice}
                                 className="bg-sky-600 hover:bg-sky-700 px-4 py-2 rounded"
@@ -94,18 +93,27 @@ const CartList = () => {
 
                     {cartList.length > 0 ? (
                         <div className="space-y-6">
-                            {cartList.map(gadget => (
-                                <div key={gadget.product_id} className="relative border-b border-gray-700 pb-6">
-                                    <h3 className="text-xl font-semibold mb-2">{gadget.name}</h3>
-                                    <p className="text-gray-300 mb-2">{gadget.description}</p>
-                                    <p className="font-bold">Price: $ {gadget.price}</p>
-                                    <button
-                                        onClick={() => handleRemoveCart(gadget.product_id)}
-                                        className="absolute top-0 right-0 text-red-500 hover:text-red-700"
-                                        title="Remove from Cart"
-                                    >
-                                        <AiOutlineClose size={20} />
-                                    </button>
+                            {cartList.map(product => (
+                                <div key={product.product_id} className="relative border-b border-gray-700 pb-6 flex gap-4">
+                                    <div className="w-1/4">
+                                        <img 
+                                            src={product.product_image} 
+                                            alt={product.product_title}
+                                            className="w-full h-auto rounded-lg object-cover"
+                                        />
+                                    </div>
+                                    <div className="w-3/4">
+                                        <h3 className="text-xl font-semibold mb-2">{product.product_title}</h3>
+                                        <p className="text-gray-300 mb-2">{product.description}</p>
+                                        <p className="font-bold">Price: ${product.price}</p>
+                                        <button
+                                            onClick={() => handleRemoveCart(product.product_id)}
+                                            className="absolute top-0 right-0 text-red-500 hover:text-red-700"
+                                            title="Remove from Cart"
+                                        >
+                                            <AiOutlineClose size={20} />
+                                        </button>
+                                    </div>
                                 </div>
                             ))}
                             
@@ -126,11 +134,20 @@ const CartList = () => {
                     <h2 className="text-2xl text-pink-300 mb-6">💖 Wishlist Items: <span className="font-bold">{wishlist.length}</span></h2>
                     {wishlist.length > 0 ? (
                         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                            {wishlist.map(gadget => (
-                                <div key={gadget.product_id} className="relative">
-                                    <Gadget gadget={gadget} />
+                            {wishlist.map(product => (
+                                <div key={product.product_id} className="relative border border-gray-700 rounded-lg p-4">
+                                    <div className="mb-4">
+                                        <img 
+                                            src={product.product_image} 
+                                            alt={product.product_title}
+                                            className="w-full h-48 object-cover rounded-lg"
+                                        />
+                                    </div>
+                                    <h3 className="text-lg font-semibold mb-2">{product.product_title}</h3>
+                                    <p className="text-gray-300 mb-2">{product.description}</p>
+                                    <p className="font-bold">Price: ${product.price}</p>
                                     <button
-                                        onClick={() => handleRemoveWishlist(gadget.product_id)}
+                                        onClick={() => handleRemoveWishlist(product.product_id)}
                                         className="absolute top-2 right-2 text-red-500 hover:text-red-700 bg-white rounded-full p-1"
                                         title="Remove from Wishlist"
                                     >
@@ -151,7 +168,7 @@ const CartList = () => {
                     <div className="bg-slate-800 p-8 rounded-lg max-w-md w-full">
                         <h3 className="text-2xl font-bold mb-4 text-green-400">Payment Successful</h3>
                         <p className="mb-6">Thanks for purchasing.</p>
-                        <p className="text-lg font-bold mb-6">Total: {calculateTotal()}</p>
+                        <p className="text-lg font-bold mb-6">Total: ${calculateTotal()}</p>
                         <button
                             onClick={handleClosePaymentSuccess}
                             className="w-full bg-sky-600 hover:bg-sky-700 py-2 rounded"
